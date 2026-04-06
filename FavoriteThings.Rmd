@@ -4,7 +4,10 @@ author: "Alex Hurtado Desaulniers"
 output: html_notebook
 ---
 
-Unordered List:
+Include 4 items or hobbies that are your favorite and then include an emoji at the bottom!
+Example:
+
+My Unordered List:
 
  - Books and Reading
  - Yarn and Crocheting 
