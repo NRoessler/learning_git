@@ -1512,7 +1512,7 @@ window.initializeCodeFolding = function(show) {
     $(this).detach().appendTo(div);
 
     // add a show code button right above
-    var showCodeText = $('<span>' + (showThis ? 'Hide' : 'Code') + '</span>');
+    var showCodeText = $('<span>' + (showThis ? 'Hide' : 'Show') + '</span>');
     var showCodeButton = $('<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm code-folding-btn pull-right float-right"></button>');
     showCodeButton.append(showCodeText);
     showCodeButton
@@ -1538,7 +1538,7 @@ window.initializeCodeFolding = function(show) {
     //   * Change text
     //   * add a class for intermediate states styling
     div.on('hide.bs.collapse', function () {
-      showCodeText.text('Code');
+      showCodeText.text('Show');
       showCodeButton.addClass('btn-collapsing');
     });
     div.on('hidden.bs.collapse', function () {
@@ -1758,15 +1758,15 @@ display: none;
 emoji at the bottom! Example:</p>
 <p>My Unordered List:</p>
 <ul>
-<li>Books and Reading</li>
-<li>Yarn and Crocheting</li>
-<li>Bikes and MTB</li>
-<li>Modding controllers and Playing Videogames</li>
+<li>Pokemon</li>
+<li>PLaying Video Games</li>
+<li>Pizza</li>
+<li>Ice Cream</li>
 </ul>
-<p>🍴</p>
+<p>🐟</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkEgZmV3IG9mIG15IGZhdm9yaXRlIHRoaW5ncyINCmF1dGhvcjogIkFsZXggSHVydGFkbyBEZXNhdWxuaWVycyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCkluY2x1ZGUgNCBpdGVtcyBvciBob2JiaWVzIHRoYXQgYXJlIHlvdXIgZmF2b3JpdGUgYW5kIHRoZW4gaW5jbHVkZSBhbiBlbW9qaSBhdCB0aGUgYm90dG9tIQ0KRXhhbXBsZToNCg0KTXkgVW5vcmRlcmVkIExpc3Q6DQoNCiAtIEJvb2tzIGFuZCBSZWFkaW5nDQogLSBZYXJuIGFuZCBDcm9jaGV0aW5nIA0KIC0gQmlrZXMgYW5kIE1UQg0KIC0gTW9kZGluZyBjb250cm9sbGVycyBhbmQgUGxheWluZyBWaWRlb2dhbWVzDQoNCvCfjbQ=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkEgZmV3IG9mIG15IGZhdm9yaXRlIHRoaW5ncyINCmF1dGhvcjogIkFsZXggSHVydGFkbyBEZXNhdWxuaWVycyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCkluY2x1ZGUgNCBpdGVtcyBvciBob2JiaWVzIHRoYXQgYXJlIHlvdXIgZmF2b3JpdGUgYW5kIHRoZW4gaW5jbHVkZSBhbiBlbW9qaSBhdCB0aGUgYm90dG9tIQ0KRXhhbXBsZToNCg0KTXkgVW5vcmRlcmVkIExpc3Q6DQoNCiAtIFBva2Vtb24NCiAtIFBMYXlpbmcgVmlkZW8gR2FtZXMNCiAtIFBpenphDQogLSBJY2UgQ3JlYW0NCiANCiDwn5Cf</div>
 
 
 
