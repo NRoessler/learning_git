@@ -26,10 +26,20 @@ colnames(iris) <- c("SepalLen", "SepalWid", "PetalLen", "PetalWid", "Species")
 head(iris)
 ```
 
+```{r}
+iris %>%
+  distinct(Species)
+min(iris$SepalLen)
+max(iris$SepalLen)
+```
 ## Questions:
- 1. How many numeric columns are in the dataset?
- 2. How many species are included?
- 3. What is the range of SepalLen? (min and max)
+1. How many numeric columns are in the dataset?
+2. How many species are included?
+3. What is the range of SepalLen? (min and max)
+
+1. 4 columns.
+2. 3 unique species.
+3. the range of SepalLen is (4.3, 7.9).
 
 # Summary Statistics
 Calculate mean, median, variance, SD for numeric columns
@@ -47,6 +57,11 @@ sapply(iris[,1:4], sd)
 3. How does the mean compare to the median for PetalLen?
 4. What does a large variance indicate?
 
+1. PetalLen has the highest spread, given it has the highest standard deviation.
+2. SepalWid has the smallest spread, given it has the smallest standard deviation.
+3. For PetalLen the  median is .592 units above the mean.
+4. Large Variance indicates a large amount of spread from the mean; a large amount of data is (relatively) far away from the mean.
+
 # Summary by Species
 
 ```{r}
@@ -55,9 +70,13 @@ aggregate(PetalWid ~ Species, data=iris, FUN=var)
 ```
 
 ## Questions:
- 1. Which species has the largest SepalLen on average?
- 2. Which species shows the most variability in PetalWid?
- 3. What does this tell you about the characteristics of different species?
+1. Which species has the largest SepalLen on average?
+2. Which species shows the most variability in PetalWid?
+3. What does this tell you about the characteristics of different species?
+ 
+1. Virginica has the largest average SepalLen.
+2. Virginica shows the most variability in PetalWid.
+3. possibly because of Virginica having the largest average SepalLen it may also possess a wide variance for PetalWid in correlation.
 
 # Visualizations
 
@@ -72,8 +91,12 @@ hist(iris$SepalLen,
 ```
 
 ## Questions:
- 1. What is the shape of the distribution (symmetric, skewed)?
- 2. Are there any unusually low or high values?
+1. What is the shape of the distribution (symmetric, skewed)?
+2. Are there any unusually low or high values?
+
+1. The distribution appears *slightly* right skewed.
+2. values between 4-4.5 and 7-8 appear unusually low compared to the rest of the data
+
 
 # Boxplot of PetalLen by Species
 
@@ -86,9 +109,13 @@ boxplot(PetalLen ~ Species,
 ```
 
 ## Questions:
- 1. Which species has the longest petals?
- 2. Are there any outliers visible?
- 3. How do the distributions differ between species?
+1. Which species has the longest petals?
+2. Are there any outliers visible?
+3. How do the distributions differ between species?
+
+1. Virginicia has the longest median petals and longest single petal overall compared to the other species.
+2. Yes, Setosa and Versicolor both possess an outlier below each respective low whisker.
+3. The distribution between species is varied, Virginicia has the highest median and largest IQR overall, with Versicolor not far behind Virginicia. Setosa possess the smallest IQR and lowest overall median Petal Length(cm).
 
 # Correlation Matrix
 
@@ -98,9 +125,14 @@ cor_matrix
 ```
 
 ## Questions:
- 1. Which two variables are most strongly correlated?
- 2. Are there any weak or negative correlations?
- 3. How might these correlations help distinguish species?
+1. Which two variables are most strongly correlated?
+2. Are there any weak or negative correlations?
+3. How might these correlations help distinguish species?
+
+1. The two variables with the highest correlation are PetalLen and SepalLen.
+2. Yes, many variables posses negative correlation: SepalLen and SepalWid, SepalWid and PetalLen, and last SepalWid and PetalWid.
+3. Some species might have consistent correlation between petal length/width and/or sepal length/width that could distinguish them from similar species under observation.
+
 
 # Interpretation 
 
@@ -110,4 +142,4 @@ Write a short paragraph (3-5 sentences) answering:
 - How could a scientist use these statistics in real life?
 - Do the histograms, boxplots, and correlations tell a consistent story?
 
-
+- The Variable(s) that best distinguish species from one another may be Petal Length and Sepal Width, Petal Length shows a determinable and consistent difference in length across the three species and Sepal Width has the lowest variance which may make it useful for consistent (non-variable) determination of species. A scientist could use these statistics in real world applications to determine the specific species of a flower in order to be sure the data they collect for specific species is correct. The historgrams, boxplots, and correlations tell a consistent story across the three species each showing notable differences to differentiate the three species of flower from one another.
